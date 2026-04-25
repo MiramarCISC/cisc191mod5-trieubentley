@@ -2,6 +2,7 @@ package edu.sdccd.cisc191;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Objects;
 
 /**
  * Module 5 Lab: Recursion + Algorithms
@@ -174,6 +175,7 @@ public class GameAlgorithms {
      * @return true if found, false otherwise
      */
     public static boolean containsMatch(BracketNode root, String target) {
+        if (target == null) return false;
         return containsMatchHelper(root, target);
     }
 
@@ -191,7 +193,7 @@ public class GameAlgorithms {
         }
 
         // Found the target at this node
-        if (node.getMatchName().equals(target)) {
+        if (Objects.equals(node.getMatchName(), target)) {
             return true;
         }
 
